@@ -1,0 +1,90 @@
+import random
+
+#create random list of numbers
+def create_list():
+  nums = []
+  for i in range(10):
+      nums.append(random.randint(-1000, 1000))
+  return nums
+
+#swap two elements
+def swap(lst, i1, i2):
+  temp = lst[i1]
+  lst[i1] = lst[i2]
+  lst[i2] = temp
+
+#bubble sort
+def bubble_sort(lst):
+  for i in range(1, len(lst)):
+    j = i -1
+    while j >=  0:
+      if lst[j + 1] < lst[j]:
+        swap(lst, j+1, j)
+      j -= 1
+
+#sorts random number
+def simple_sort(lst):
+  for i in range(len(lst)):
+    mini = i
+    for j in range(i, len(lst)):
+      if lst[j] < lst[mini]:
+          mini = j
+    swap(lst, mini, i)
+
+def merge(original, left, right):
+  oi = 0
+  li = 0
+  ri = 0
+  while li < len(left) and ri < len(right):
+    if left(li) < right(rl):
+      orignal(ri) = left(li)
+      li += 1
+    else:
+      original(oi) = right(ri)
+      ri += 1
+    oi += 1 
+  while li < len(left):
+    original(oi) = left(li)
+    li += 1
+    oi += 1
+  while li < len(left):
+    original[oi] = left[li]
+    li += 1
+    oi += 1
+  while ri < len(right):
+     original[oi] = left[ri]
+     ri += 1
+     oi += 1
+
+
+      
+
+
+def split(alist):
+  if (len(alist) > 1):
+    middle = len(alist) // 2
+    left = alist(middle:)
+    right = alist(middle:)
+    split(left)
+    split(right)
+    merge(alist, left, right)
+
+def merge_sort(a):
+  split(a)
+
+def binary_search(alist, low, high, target)  
+   if low <= high:
+     middle = (low+high)//2
+     if alist(middle) == target:
+       return middle
+     elif alist(middle) > target  
+
+#run our sort
+def main():
+  rlist = create_list()
+  print(rlist)
+  bubble_sort(rlist)
+  simple_sort(rlist)
+  print(rlist)
+  
+main()
